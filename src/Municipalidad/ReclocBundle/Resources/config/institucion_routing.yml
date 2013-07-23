@@ -1,0 +1,19 @@
+index_institucion:
+  pattern:    /institucion/index/{id_rubro}
+  defaults: { _controller: 'ReclocBundle:Institucion:index' }
+  
+nuevo_institucion:
+  pattern:    /institucion/nuevo/{id_rubro}
+  defaults: { _controller: 'ReclocBundle:Institucion:nuevo' }
+
+editar_institucion:
+  pattern:    /institucion/editar/{id}/{id_rubro}
+  defaults: { _controller: 'ReclocBundle:Institucion:editar' }
+  
+mostrar_institucion:
+  pattern:    /institucion/mostrar/{id}
+  defaults: { _controller: 'ReclocBundle:Institucion:mostrar' }
+  
+borrar_institucion:
+  pattern:    /institucion/borrar/{id}/{id_rubro}
+  defaults: { _controller: 'ReclocBundle:Institucion:borrar' }

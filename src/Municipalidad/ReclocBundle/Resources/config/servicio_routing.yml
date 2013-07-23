@@ -1,0 +1,21 @@
+index_servicio:
+  pattern:    /servicio/index
+  defaults: { _controller: 'ReclocBundle:Servicio:index' }
+  
+nuevo_servicio:
+  pattern:    /servicio/nuevo
+  defaults: { _controller: 'ReclocBundle:Servicio:nuevo' }
+
+editar_servicio:
+  pattern:    /servicio/editar/{id}
+  defaults: { _controller: 'ReclocBundle:Servicio:editar' }
+  
+mostrar_servicio:
+  pattern:    /servicio/mostrar/{id}
+  defaults: { _controller: 'ReclocBundle:Servicio:mostrar' }
+  
+borrar_servicio:
+  pattern:    /servicio/borrar/{id}
+  defaults: { _controller: 'ReclocBundle:Servicio:borrar' }
+  
+

@@ -1,0 +1,38 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Inicio{% endblock %}
+
+
+{% block body %}
+   {%for servicio in servicios %}
+        <hr>
+        <h2>{{ servicio.nombre}}</h2>
+        <hr>
+        {% for rubro in servicio.rubros %}
+            <h3>{{ rubro.nombre }}</h3>
+            <hr>
+            {% for institucion in rubro.instituciones %}
+            <div id="instituciones">
+             <h3>{{ institucion.nombre }}</h3>
+              <p><b>Prestaicion: </b>{{ institucion.prestacion }}</p>
+              <p> 
+                  <b>Contacto:</b> {{ institucion.contactopersona }} 
+                  <b>Correo Electronico:</b> {{ institucion.mail }} 
+                  <b>Horario de Atencion:</b> {{ institucion.horario }} 
+              </p>
+              <p>      
+                    <b>Direccion:</b> {{ institucion.direccion }}
+                    <b>Telfonos:</b> {{ institucion.telefonos }} 
+              </p>
+              <p>
+                  <b>Observaciones:</b> {{ institucion.observacion }}
+              </p>
+             </div>      
+             {% endfor %}
+            
+            {% endfor %}
+           
+        
+    
+    {% endfor %}
+{% endblock %}

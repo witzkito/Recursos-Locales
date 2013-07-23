@@ -1,0 +1,19 @@
+index_rubro:
+  pattern:    /rubro/index/{id_servicio}
+  defaults: { _controller: 'ReclocBundle:Rubro:index' }
+  
+nuevo_rubro:
+  pattern:    /rubro/nuevo/{id_servicio}
+  defaults: { _controller: 'ReclocBundle:Rubro:nuevo' }
+
+editar_rubro:
+  pattern:    /rubro/editar/{id}/{id_servicio}
+  defaults: { _controller: 'ReclocBundle:Rubro:editar' }
+  
+mostrar_rubro:
+  pattern:    /rubro/mostrar/{id}
+  defaults: { _controller: 'ReclocBundle:Rubro:mostrar' }
+  
+borrar_rubro:
+  pattern:    /rubro/borrar/{id}/{id_servicio}
+  defaults: { _controller: 'ReclocBundle:Rubro:borrar' }

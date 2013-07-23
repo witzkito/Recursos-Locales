@@ -1,0 +1,18 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Nuevo Servicio{% endblock %}
+
+{% block body %}
+
+<a href=" {{ path('index_servicio') }}">Volver a Servicios</a>
+
+<div class="form">
+        <form action="{{ path('nuevo_servicio') }}" method="post">
+            
+            {{ form_rest(form) }}
+            <input type="submit" value="Agregar Servicio" />
+            
+        </form>
+        
+    </div>
+{% endblock %}

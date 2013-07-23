@@ -1,0 +1,39 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Servicios{% endblock %}
+
+
+{% block body %}
+    <table id="tabla">
+            <a href=" {{ path('nuevo_servicio') }}">Nuevo Servicio</a>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Fecha Creado</th>
+                    <th>Fecha Actualizado</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for servicio in servicios %}
+                <tr>
+                    <td>{{ servicio.nombre }}</td>
+                    <td>{{ servicio.fechacreado | date('Y-m-d H:i:s') }}</td>
+                    <td>{{ servicio.fechaactualizado | date('Y-m-d H:i:s') }}</td>
+                    <td><a href="{{ path('editar_servicio', { 'id' : servicio.id }) }}">Editar</a>
+                        <a href="#" onclick="confirmar('¿Esta seguro de Borrar el Servicio?',  '{{ path('borrar_servicio', { 'id' : servicio.id }) }}')" >Borrar Servicio</a>
+                        <a href="{{ path('index_rubro', { 'id_servicio' : servicio.id }) }}">Ver Rubros</a></td>    
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="6"> Total {{ servicios |length }}</td>
+                </tr>
+
+            </tfoot>
+        </table>    
+    
+
+{% endblock %}

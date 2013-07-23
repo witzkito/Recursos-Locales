@@ -1,0 +1,14 @@
+{% extends "::base.html.twig" %}
+
+{% block encabezado%} Modificar Rubro{% endblock %}
+
+{% block body %}
+
+   <div class="form">
+        <form action="{{ path('editar_rubro', {'id' : rubro.id , 'id_servicio' : id_servicio}) }}" method="post">
+            {{ form_widget(form) }}
+            <input type="submit" value="Guardar cambios" />
+        </form>
+    </div>
+    
+{% endblock %}

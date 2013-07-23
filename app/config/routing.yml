@@ -1,0 +1,12 @@
+inicio:
+  pattern:    /index
+  defaults: { _controller: 'ReclocBundle:Default:index' }
+
+_servicio:
+  resource:   @ReclocBundle/Resources/config/servicio_routing.yml
+
+_rubro:
+  resource:   @ReclocBundle/Resources/config/rubro_routing.yml
+  
+_institucion:
+  resource:   @ReclocBundle/Resources/config/institucion_routing.yml

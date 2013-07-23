@@ -1,0 +1,14 @@
+{% extends "::base.html.twig" %}
+
+{% block encabezado%} Modificar Institucion{% endblock %}
+
+{% block body %}
+
+   <div class="form">
+        <form action="{{ path('editar_institucion', {'id' : institucion.id , 'id_rubro' : id_rubro}) }}" method="post">
+            {{ form_widget(form) }}
+            <input type="submit" value="Guardar cambios" />
+        </form>
+    </div>
+    
+{% endblock %}

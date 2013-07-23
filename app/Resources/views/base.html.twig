@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	 <meta charset="UTF-8" />
+        <title>{% block title %}{% endblock %} | Recursos Locales</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link href="{{ asset('bundles/recloc/css/style.css') }}" rel="stylesheet" type="text/css" />
+	
+</head>
+
+<body>
+		
+<div id="topbar">
+		<div class="content">
+			
+			<div class="wrap content">
+
+				<h1><a href="#" title="">Recursos Locales - Puerto Rico - Misiones</a></h1>
+			</div>
+		</div>
+</div>
+
+<div id="subbar">
+	<div class="content">
+		<div class="wrap menu">
+				<div class="right rss">
+					
+				</div>
+				<ul>	
+					<li><a class="current" href="{{ path('inicio') }}" title="Inicio"><span>Inicio</span></a></li>
+                                        <li><a class="current" href="{{ path('index_servicio') }}" title="Agregar a la guia!!"><span>Agregar a la guia!!</span></a></li>
+                                        <li><a class="current" href="{{ path('index_servicio') }}" title="Administrar"><span>Administrar</span></a></li>
+					
+				</ul>
+		</div>
+	</div>
+</div>
+	
+	
+<div class="content">
+	<div id="main">
+            {% block body %}{% endblock %}
+	
+        </div>
+	<div class="clear"></div>
+	</div>
+	<div id="footer">
+		
+	&copy; Fernando Witzke - MUNICIPALIDAD DE PUERTO RICO, MISIONES
+	</div>	
+	
+</div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+    <head>
+       
+    </head>
+    <body>
+        
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
+
+<script type="text/javascript">
+    function confirmar (mensaje, url) {
+
+        if(confirm(mensaje)) {
+
+            document.location.href= url;
+
+        }
+
+    }
+</script>

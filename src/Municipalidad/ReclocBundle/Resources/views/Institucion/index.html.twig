@@ -1,0 +1,50 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Instituciones{% endblock %}
+
+
+{% block body %}
+    <table id="tabla">
+            <a href=" {{ path('nuevo_institucion', { 'id_rubro' : id_rubro}) }}">Nueva Institucion</a>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Prestacion</th>
+                    <th>Contacto</th>
+                    <th>E-Mail</th>
+                    <th>Direccion</th>
+                    <th>Telefonos</th>
+                    <th>Horarios</th>
+                    <th>Observaciones</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for institucion in instituciones %}
+                <tr>
+                    <td>{{ institucion.nombre }}</td>
+                    <td>{{ institucion.prestacion }}</td>
+                    <td>{{ institucion.contactopersona }}</td>
+                    <td>{{ institucion.mail }}</td>
+                    <td>{{ institucion.direccion }}</td>
+                    <td>{{ institucion.telefonos }}</td>
+                    <td>{{ institucion.horario }}</td>
+                    <td>{{ institucion.observacion }}</td>
+                    <td><a href="{{ path('editar_institucion', { 'id' : institucion.id , 'id_rubro' : id_rubro }) }}">Editar</a>
+                        <a href="#" onclick="confirmar('¿Esta seguro de Borrar la Institucion?',  '{{ path('borrar_institucion', { 'id' : institucion.id , 'id_rubro' : id_rubro}) }}')" >Borrar Institucion</a>
+                    </td>
+                        
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="9"> Total {{ instituciones |length }}</td>
+                </tr>
+
+            </tfoot>
+        </table>    
+    
+
+{% endblock %}
